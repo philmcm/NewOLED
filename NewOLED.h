@@ -1,3 +1,10 @@
+//  
+//  NewOLED.h - Header for Newhaven OLED Display.
+//  Created for ENGG4201/8201 by Andrew Miller, Phil McMillan
+//
+// Based on sample code taken from https://www.newhavendisplay.com/resources_dataFiles/excode/txt/Arduino/slim_oled_code.txt
+// Modifications made by Phil McMillan
+
 #ifndef NEWOLED_H
 #define NEWOLED_H
 

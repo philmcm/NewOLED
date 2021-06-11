@@ -1,5 +1,9 @@
+//  
+//  NewOLED.cpp - Code for Newhaven OLED Display.
+//  Created for ENGG4201/8201 by Andrew Miller, Phil McMillan
+//
 // Based on sample code taken from https://www.newhavendisplay.com/resources_dataFiles/excode/txt/Arduino/slim_oled_code.txt
-// Modifications made by Phil McMillan
+//
 
 #include "Arduino.h"
 #include "NewOLED.h"
@@ -15,6 +19,7 @@ NewOLED::NewOLED(char noledI2CA) {
     _line[i] = (unsigned char) 'A';  
 }
 
+// send command
 void NewOLED::_command(unsigned char c)
 {
   unsigned char i, temp;
@@ -23,6 +28,7 @@ void NewOLED::_command(unsigned char c)
   _send_packet(2);
 }
 
+// send data
 void NewOLED::_data(unsigned char d)
 {
   unsigned char i, temp;
@@ -31,6 +37,7 @@ void NewOLED::_data(unsigned char d)
   _send_packet(2);
 }
 
+// send packet
 void NewOLED::_send_packet(unsigned char x)
 {
   unsigned char ix;
@@ -42,6 +49,7 @@ void NewOLED::_send_packet(unsigned char x)
   Wire.endTransmission();
 }
 
+// output a line to the display (num: 1 or 2)
 void NewOLED::outputLine(int num, unsigned char *line)
 {
   int i = 0;
@@ -67,6 +75,7 @@ void NewOLED::outputLine(int num, unsigned char *line)
   }
 }
 
+// setup the display
 void NewOLED::oledSetup() 
 {
   delay(10);
