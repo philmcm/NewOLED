@@ -1,0 +1,3 @@
+NewOLED	KEYWORD1
+outputLine	KEYWORD2
+oledSetup	KEYWORD2
